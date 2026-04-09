@@ -7,12 +7,14 @@ function ProductsSection({
   bestSellerIds,
 }) {
   return (
-    <section className="section-block">
+    <section className="section-block" id="products">
       <div className="section-head">
-        <h2>المنتجات</h2>
-        <p>
-          هذه البيانات قادمة من /api/products
-          {' '}والفلترة هنا مؤقتًا من الفرونت إند نفسه
+        <div>
+          <p className="section-kicker">Products API</p>
+          <h2>منتجات المتجر</h2>
+        </div>
+        <p className="section-note">
+          البيانات قادمة من الباك إند، والفلترة الحالية تتم من الفرونت إند مؤقتًا.
         </p>
       </div>
 

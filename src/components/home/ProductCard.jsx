@@ -11,32 +11,33 @@ function ProductCard({ product, imageUrl, categoryName, isBestSeller }) {
             className="product-image"
           />
         ) : (
-          <div className="image-placeholder">No image</div>
+          <div className="image-placeholder">
+            <span>{product.productName}</span>
+          </div>
         )}
 
-        {isBestSeller && (
-          <span className="badge">Best Seller</span>
-        )}
+        {isBestSeller && <span className="badge">Best Seller</span>}
       </div>
 
       <div className="product-body">
+        <div className="product-topline">
+          <span className="product-category-pill">
+            {categoryName || 'Unknown category'}
+          </span>
+          <span className="discount">-{product.discountPercent || 0}%</span>
+        </div>
+
         <h3>{product.productName}</h3>
         <p className="product-desc">{product.productDesc}</p>
 
         <div className="product-meta">
-          <span>{moneyFormatter.format(product.productPrice || 0)}</span>
+          <strong>{moneyFormatter.format(product.productPrice || 0)}</strong>
           <span>Qty: {product.productQunatity}</span>
         </div>
 
-        <div className="product-footer">
-          <span className="product-category">
-            {categoryName || 'Unknown category'}
-          </span>
-
-          <span className="discount">
-            Discount: {product.discountPercent}%
-          </span>
-        </div>
+        <button className="product-action" type="button">
+          View Details
+        </button>
       </div>
     </article>
   )

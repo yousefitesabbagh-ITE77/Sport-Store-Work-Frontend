@@ -1,29 +1,69 @@
 function HeroSection({ banner }) {
   return (
-    <section className="hero-section">
-      {banner ? (
-        <>
-          <div className="hero-content">
-            <p className="eyebrow">Home API</p>
-            <h2>{banner.title}</h2>
-            <p>{banner.subtitle}</p>
+    <section className="hero-section" id="hero">
+      <div className="hero-panel">
+        <div className="hero-copy">
+          <p className="section-kicker">Sport Store MVP</p>
+
+          {banner ? (
+            <>
+              <h2>{banner.title}</h2>
+              <p>{banner.subtitle}</p>
+            </>
+          ) : (
+            <>
+              <h2>ابدأ بناء متجر رياضي حقيقي خطوة بخطوة</h2>
+              <p>
+                هذه نسخة Frontend مربوطة مع الباك إند الحالي، ومجهزة لتطوير
+                الصفحة الرئيسية قبل الانتقال إلى الصفحات الأخرى.
+              </p>
+            </>
+          )}
+
+          <div className="hero-actions">
+            <a href="#products" className="primary-link">
+              تصفح المنتجات
+            </a>
+            <a href="#best-sellers" className="secondary-link">
+              أفضل المبيعات
+            </a>
           </div>
 
-          <div className="hero-image-wrapper">
+          <div className="hero-stats">
+            <div className="hero-stat">
+              <strong>Frontend</strong>
+              <span>React + Vite</span>
+            </div>
+            <div className="hero-stat">
+              <strong>Backend</strong>
+              <span>Spring Boot API</span>
+            </div>
+            <div className="hero-stat">
+              <strong>Data</strong>
+              <span>PostgreSQL + Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="hero-visual">
+          {banner?.imageUrl ? (
             <img
               src={banner.imageUrl}
               alt={banner.title}
               className="hero-image"
             />
-          </div>
-        </>
-      ) : (
-        <div className="empty-hero">
-          <p className="eyebrow">Home API</p>
-          <h2>لا يوجد Hero Banner بعد</h2>
-          <p>هذا طبيعي إذا لم يتم إدخال بيانات للهوم بعد.</p>
+          ) : (
+            <div className="hero-placeholder-card">
+              <span className="hero-placeholder-tag">No Hero Banner Yet</span>
+              <h3>الهيكل أصبح جاهزًا</h3>
+              <p>
+                عندما يضيف صاحبك بيانات حقيقية للهوم من الباك إند، ستظهر هنا
+                مباشرة.
+              </p>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </section>
   )
 }

@@ -97,25 +97,27 @@ function HomePage() {
   }
 
   return (
-    <div className="page-shell">
-      <Header />
+    <div className="app-background">
+      <div className="page-shell">
+        <Header />
 
-      <HeroSection banner={firstBanner} />
+        <HeroSection banner={firstBanner} />
 
-      <CategoryFilter
-        categories={categories}
-        activeCategory={activeCategory}
-        onSelectCategory={setActiveCategory}
-      />
+        <CategoryFilter
+          categories={categories}
+          activeCategory={activeCategory}
+          onSelectCategory={setActiveCategory}
+        />
 
-      <ProductsSection
-        products={filteredProducts}
-        imageMap={imageMap}
-        categoryMap={categoryMap}
-        bestSellerIds={bestSellerIds}
-      />
+        <ProductsSection
+          products={filteredProducts}
+          imageMap={imageMap}
+          categoryMap={categoryMap}
+          bestSellerIds={bestSellerIds}
+        />
 
-      <BestSellersSection bestSells={homeData.bestSells} />
+        <BestSellersSection bestSells={homeData.bestSells} />
+      </div>
     </div>
   )
 }
